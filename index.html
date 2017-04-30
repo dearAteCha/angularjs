@@ -1,23 +1,22 @@
 <html>
 	<head>
-		<title>Charlyn's Goals in Life</title>
-		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="app.js">
+		</script>
 		<style>
 			li{
 				list-style:none
 			}
 		</style>
-		
 	</head>
-	<body>
-		<h1>Goals:</h1>
-		<p>Achieved: <strong>3</strong></p>
+	<body ng-app="myApp" ng-controller="myCtrl">
+	<h1>{{pageTitle}}</h1>
+	<p>Achieved: <strong> {{countAchieved()}} </strong></p>
 		<ul>
-			<li><input type="checkbox">Have my own House & Lot</li>
-			<li><input type="checkbox">Have my own car</li>
-			<li><input type="checkbox">Achieve a Master's Degree</li>
-			<li><input type="checkbox">Build a family</li>
+			<li ng-repeat="x in requirements">
+				<input type="checkbox" ng-model="x.ach"/>{{x.req}}
+			</li>
 		</ul>
+	
 	</body>
 </html>
